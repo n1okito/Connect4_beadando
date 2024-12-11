@@ -15,7 +15,7 @@ public class Board {
     private void initializeBoard() {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                grid[i][j] = '.'; // Üres hely jelzése
+                grid[i][j] = '.';
             }
         }
     }
@@ -34,7 +34,7 @@ public class Board {
 
     public boolean makeMove(int column, char symbol) {
         if (column < 0 || column >= columns || grid[0][column] != '.') {
-            return false; // Érvénytelen lépés
+            return false;
         }
 
         for (int row = rows - 1; row >= 0; row--) {
@@ -43,13 +43,12 @@ public class Board {
                 return true;
             }
         }
-        return false; // Nem található szabad hely az oszlopban
-    }
+        return false;
 
     public boolean isFull() {
         for (int col = 0; col < columns; col++) {
             if (grid[0][col] == '.') {
-                return false; // Ha van legalább egy üres hely, nem tele
+                return false;
             }
         }
         return true;
