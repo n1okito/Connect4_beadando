@@ -44,7 +44,7 @@ public class Board {
             }
         }
         return false;
-
+    }
     public boolean isFull() {
         for (int col = 0; col < columns; col++) {
             if (grid[0][col] == '.') {
